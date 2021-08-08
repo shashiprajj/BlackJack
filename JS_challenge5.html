@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Description" content="This is Good!!!">
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
+    <title>jQuery UI</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <!-- <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.structure.css">
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.theme.css"> -->
+
+    <style>
+        .container-1 {
+            border: 2px solid black;
+            width: 75%;
+            margin: 0 auto;
+            text-align: center;
+            text-transform: capitalize;
+            background: url("data:image/jpeg;base64,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") center;
+        }
+        
+        .flex-container-row-1,
+        .flex-container-row-2,
+        .flex-container-row-3 {
+            display: flex;
+            flex-wrap: wrap;
+            border: 2px solid black;
+            margin: 0 auto;
+            justify-content: space-around;
+            background: url("https://mk0gamesnetentcxytko.kinstacdn.com/wp-content/uploads/2018/09/blackjack_background.jpg") center;
+            color: #fff;
+        }
+        
+        .flex-container-row-1 {
+            height: 350px;
+        }
+        
+        .flex-container-row-1 div {
+            border: 1px solid black;
+            padding: 10px;
+            height: 350px;
+            text-align: center;
+            flex: 1;
+            flex-wrap: wrap;
+            flex-direction: row;
+            /* flex = 1 makes both div 50% */
+        }
+        
+        #black-jack {
+            background-color: white;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 45%;
+        }
+        
+        #your-bj {
+            flex-wrap: wrap;
+        }
+        
+        .flex-container-row-2 button {
+            border: 1px solid black;
+        }
+        
+        .flex-container-row-2 div {
+            border: 3px solid black;
+            padding: 5px;
+        }
+        
+        table th,
+        td {
+            border: 5px solid black;
+            padding: 5px;
+        }
+        
+        #bj-play {
+            background-color: white;
+            margin: 10px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+
+
+
+</head>
+
+<body style="background:url('https://png.pngtree.com/thumb_back/fw800/back_our/20190628/ourmid/pngtree-elegant-light-blue-line-background-image_272095.jpg') center;">
+
+
+    <div class="container-1">
+
+        <div class="flex-container">
+            <div class="row">
+                <div class="col-lg-2" id="after_img1">
+                    <div id="before-img1">
+                        <span id="img1"><img style = "width:140px; height:110px" src="https://media3.giphy.com/media/58FB1Ru6ipmDYUEx18/source.gif" alt=""></span>
+                    </div>
+
+                </div>
+
+                <div class="container col-lg-5" style="margin-top:20;">
+                    <h2><b><span id="black-jack">Challenge 4: Black<span style = "color:darkgreen">jack</span></span></b></h2>
+                    <h3><span id="bj-play"><b>Let's Play</b></span></h3>
+                </div>
+
+                <div class="col-lg-2" id="after_img2">
+                    <div id="before-img2">
+                        <span id="img2"><img style = "width:140px; height:110px" src="https://media3.giphy.com/media/58FB1Ru6ipmDYUEx18/source.gif" alt=""></span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="flex-container-row-1" id="bj">
+            <div id="your-bj">
+                <h2>You : <span id="your-result">0</span></h2>
+            </div>
+
+            <div id="dealer-bj">
+                <h2>Dealer : <span id="dealer-result">0</span></h2>
+            </div>
+        </div>
+
+
+        <div class="flex-container-row-2">
+            <div>
+                <button style="margin:5px auto" class="btn-lg btn-primary mr-2" id="hit-btn">Hit</button>
+                <button style="margin:5px auto" class="btn-lg btn-warning mr-2" id="stand-btn">Stand</button>
+                <button style="margin:5px auto" class="btn-lg btn-danger" id="deal-btn">Deal</button>
+            </div>
+        </div>
+
+        <div class="flex-container-row-3">
+            <table>
+                <!--  style="color: #fff;border : 1px solid black; margin : 10px; border-radius: 20%;"-->
+                <tr>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                    <th>Draws</th>
+                </tr>
+
+                <tr>
+                    <td><span id="wins">0</span></td>
+                    <td><span id="losses">0</span></td>
+                    <td><span id="draws">0</span></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+    <br><br>
+
+</body>
+
+<!-- this should be on the top of jquery-ui.js -->
+<script src="jquery.js " type="text/javascript "></script>
+<script src="jquery-ui-1.12.1/jquery-ui.js " type="text/javascript "></script>
+
+<script>
+    var bjGame = {
+        "you": {
+            "scoreSpan": "#your-result",
+            "div": "#your-bj",
+            "score": 0
+        },
+        "dealer": {
+            "scoreSpan": "#dealer-result",
+            "div": "#dealer-bj",
+            "score": 0
+        },
+        "cards": ["2", "3", "4", "5", "6", "7", "8", "9", "10", "K", "Q", "J", "A"],
+        "cardsMap": {
+            "2": 2,
+            "3": 3,
+            "4": 4,
+            "5": 5,
+            "6": 6,
+            "7": 7,
+            "8": 8,
+            "9": 9,
+            "10": 10,
+            "K": 10,
+            "Q": 10,
+            "J": 10,
+            "A": [1, 11]
+        },
+        "wins": 0,
+        "losses": 0,
+        "draws": 0,
+        "isStand": false,
+        "turnOver": false,
+    }
+
+    const YOU = bjGame["you"];
+    const DEALER = bjGame["dealer"];
+
+    const hitSound = new Audio("sounds/swish.m4a");
+    const winSound = new Audio("sounds/cash.mp3");
+    const lossSound = new Audio("sounds/aww.mp3");
+
+    document.querySelector("#hit-btn").addEventListener("click", bjHit);
+    document.querySelector("#stand-btn").addEventListener("click", dealerLogic);
+    document.querySelector("#deal-btn").addEventListener("click", bjDeal);
+
+    function bjHit() {
+        if (bjGame["isStand"] === false) {
+            let card = randomCards();
+            showCard(card, YOU);
+            updateScore(card, YOU);
+            console.log(YOU["score"]);
+            showScore(YOU);
+        }
+    }
+
+    function randomCards() {
+        let randomIndex = Math.floor(Math.random() * 13);
+        return bjGame["cards"][randomIndex];
+    }
+
+    function showCard(card, activePlayer) {
+        if (activePlayer["score"] <= 21) {
+            let cardImage = document.createElement("img");
+            cardImage.src = `images/${card}.png`; // to randomly get the images
+            cardImage.style.width = "100px";
+            cardImage.style.height = "100px";
+            cardImage.style.margin = "10px";
+            document.querySelector(activePlayer["div"]).appendChild(cardImage);
+            hitSound.play();
+        }
+    };
+
+    function bjDeal() {
+        if (bjGame["turnOver"] === true) {
+            bjGame["isStand"] = false;
+            // showResult(computeWinner());
+            // let winner = computeWinner();
+            // showResult(winner);
+
+            let yourImages = document.querySelector("#your-bj").querySelectorAll("img");
+            // console.log(yourImages);
+            // yourImages[0].remove();
+            let dealerImages = document.querySelector("#dealer-bj").querySelectorAll("img");
+
+
+            for (i = 0; i < yourImages.length; i++) {
+                yourImages[i].remove();
+            };
+            for (i = 0; i < dealerImages.length; i++) {
+                dealerImages[i].remove();
+            };
+
+            YOU["score"] = 0;
+            DEALER["score"] = 0;
+
+            document.querySelector("#your-result").textContent = 0;
+            document.querySelector("#dealer-result").textContent = 0;
+            document.querySelector("#your-result").style.color = "white";
+            document.querySelector("#dealer-result").style.color = "white";
+
+            document.querySelector("#bj-play").textContent = "let's Play";
+            document.querySelector("#bj-play").style.color = "black";
+
+            document.getElementById("after-img1").remove();
+            document.getElementById("after-img2").remove();
+            var after_img_1 = document.createElement("span");
+            after_img_1.id = "img1";
+            var after_img_2 = document.createElement("span");
+            after_img_2.id = "img2";
+
+
+            after_img_1.innerHTML = "<img id = 'img1' style = 'width:140px; height:110px' src = 'https://media3.giphy.com/media/58FB1Ru6ipmDYUEx18/source.gif' />";
+            after_img_2.innerHTML = "<img id = 'img2' style = 'width:140px; height:110px' src = 'https://media3.giphy.com/media/58FB1Ru6ipmDYUEx18/source.gif' />";
+
+            console.log(after_img_1);
+            console.log(after_img_2);
+            document.getElementById("img1").appendChild(after_img_1);
+            document.getElementById("img2").appendChild(after_img_2);
+
+            bjGame["turnOver"] = false;
+        }
+    }
+
+    function updateScore(card, activePlayer) {
+        //  Logic for the Selection of Ace (A)
+        // id adding 11 keeps me below 21, add 11. otherwise add 1.
+        if (card === "A") {
+            if (activePlayer["Score"] + bjGame["cardsMap"][card] <= 21) {
+                activePlayer["score"] += bjGame["cardsMap"][card][0]; // adding 11
+            } else {
+                activePlayer["score"] += bjGame["cardsMap"][card][1]; // adding 1
+            }
+        } else {
+            activePlayer["score"] += bjGame["cardsMap"][card];
+        }
+    }
+
+
+    function showScore(activePlayer) {
+        if (activePlayer["score"] > 21) {
+            document.querySelector(activePlayer["scoreSpan"]).textContent = "Burst!";
+            document.querySelector(activePlayer["scoreSpan"]).style.color = "Red";
+        } else {
+            document.querySelector(activePlayer["scoreSpan"]).textContent = activePlayer["score"];
+        }
+    }
+
+
+    function Sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+
+    async function dealerLogic() {
+        bjGame["isStand"] = true;
+
+        while (DEALER["score"] < 16 && bjGame["isStand"] === true) {
+            let card = randomCards();
+            showCard(card, DEALER);
+            updateScore(card, DEALER);
+            showScore(DEALER);
+            await Sleep(1000);
+
+        }
+        // if (DEALER["score"] > 15) {
+
+        bjGame["turnOver"] = true;
+
+        // showResult(computeWinner());
+        let winner = computeWinner();
+        showResult(winner);
+        // }
+
+    }
+
+
+    //  compute Winner and return who just won
+    // update the wins, losses and draws
+    function computeWinner() {
+        let winner;
+
+        if (YOU["score"] <= 21) {
+            // condition higher score than dealer oe when dealer busts but you're 21 or under
+            if (YOU["score"] > DEALER["score"] || (DEALER["score"] > 21)) {
+                // console.log("You Won!!!");
+                bjGame["wins"]++;
+                winner = YOU;
+
+            } else if (YOU["score"] < DEALER["score"]) {
+                // console.log("You Lose!!!");
+                bjGame["losses"]++;
+                winner = DEALER;
+
+            } else if (YOU["score"] === DEALER["score"]) {
+                bjGame["draws"]++;
+                console.log("Match Tied!!!");
+                // console.log(dealer["score"]);
+            }
+            // condition: when user burst but dealer doesn't
+        } else if (YOU["score"] > 21 && (DEALER["score"] <= 21)) {
+            // console.log("You lose!!!");
+            bjGame["losses"]++;
+            winner = DEALER;
+
+        } else if (YOU["score"] > 21 && (DEALER["score"] > 21)) {
+            bjGame["draws"]++;
+            // console.log("Match Tied");
+        }
+
+        // condition : when both dealer and user both burst
+        console.log("Winner is :", winner);
+        return winner;
+    }
+
+    function showResult(winner) {
+        if (bjGame["turnOver"] === true) {
+            let message, messageColor;
+
+            if (winner === YOU) {
+                document.querySelector("#wins").textContent = bjGame["wins"];
+                message = "You Won!!!";
+                messageColor = "green";
+                winSound.play();
+
+                document.querySelector("#img1").remove();
+                document.querySelector("#img2").remove();
+                var img_1 = document.createElement("span")
+                img_1.id = "after-img1";
+                var img_2 = document.createElement("span")
+                img_2.id = 'after-img2';
+
+                img_1.innerHTML = "<img id = 'set_img1' style = 'width:140px; height:110px' src = 'https://media.tenor.com/images/9f51db54a38e6b6abb251b46dac592fd/tenor.gif'/>";
+                img_2.innerHTML = "<img id = 'set_img2' style = 'width:140px; height:110px' src = 'https://media.tenor.com/images/9f51db54a38e6b6abb251b46dac592fd/tenor.gif'/>";
+                document.getElementById("before-img1").appendChild(img_1);
+                document.getElementById("before-img2").appendChild(img_2);
+
+                var span_1 = document.createElement("span");
+                span_1.id = "img1";
+                document.getElementById("before-img1").appendChild(span_1);
+                var span_2 = document.createElement("span");
+                span_2.id = "img2";
+                document.getElementById("before-img2").appendChild(span_2);
+
+
+            } else if (winner === DEALER) {
+                document.querySelector("#losses").textContent = bjGame["losses"];
+                message = "You lost!!!";
+                messageColor = "red";
+                lossSound.play();
+
+                document.querySelector("#img1").remove();
+                document.querySelector("#img2").remove();
+                var img_1 = document.createElement("span")
+                img_1.id = "after-img1";
+                var img_2 = document.createElement("span")
+                img_2.id = 'after-img2';
+                img_1.innerHTML = "<img id = 'set_img1' style = 'width:140px; height:110px' src = 'https://media1.tenor.com/images/6db91599aa40fa4d258d865615b4fe09/tenor.gif?itemid=7870358'/>";
+                img_2.innerHTML = "<img id = 'set_img2' style = 'width:140px; height:110px' src = 'https://media1.tenor.com/images/6db91599aa40fa4d258d865615b4fe09/tenor.gif?itemid=7870358'/>";
+                document.getElementById("before-img1").appendChild(img_1);
+                document.getElementById("before-img2").appendChild(img_2);
+
+                var span_1 = document.createElement("span");
+                span_1.id = "img1";
+                document.getElementById("before-img1").appendChild(span_1);
+                var span_2 = document.createElement("span");
+                span_2.id = "img2";
+                document.getElementById("before-img2").appendChild(span_2);
+
+
+
+            } else {
+                document.querySelector("#draws").textContent = bjGame["draws"];
+                message = "You Draw!!!";
+                messageColor = "Yellow";
+
+                // document.querySelector("#img1").remove();
+                // document.querySelector("#img2").remove();
+                // var img_1 = document.createElement("span")
+                // img_1.id = "after-img1";
+                // var img_2 = document.createElement("span")
+                // img_2.id = 'after-img2';
+                // img_2.innerHTML = "<img id = 'set_img2' style = 'width:140px; height:110px' src = 'https://media1.tenor.com/images/6db91599aa40fa4d258d865615b4fe09/tenor.gif?itemid=7870358'/>";
+                // img_1.innerHTML = "<img id = 'set_img1' style = 'width:140px; height:110px' src = 'https://media1.tenor.com/images/6db91599aa40fa4d258d865615b4fe09/tenor.gif?itemid=7870358'/>";
+                // document.getElementById("before-img1").appendChild(img_1);
+                // document.getElementById("before-img2").appendChild(img_2);
+
+                // var span_1 = document.createElement("span");
+                // span_1.id = "img1";
+                // document.getElementById("before-img1").appendChild(span_1);
+                // var span_2 = document.createElement("span");
+                // span_2.id = "img2";
+                // document.getElementById("before-img2").appendChild(span_2);
+
+
+
+            }
+
+
+            document.querySelector("#bj-play").textContent = message;
+            document.querySelector("#bj-play").style.color = messageColor;
+        }
+    }
+</script>
+
+</html>
